@@ -11,28 +11,28 @@ export default class HotReloadingTest extends React.Component {
   render() {
     return (
       <View style={{flex: 1, paddingTop: 20}}>
-        <View style={{flex: 1, backgroundColor: 'rgba(255, 0, 0, 0.1)'}}>
-          {['Manual', 'Bind'].map(this.manualBind)}
-        </View>
         <View style={{flex: 1, backgroundColor: 'rgba(0, 255, 0, 0.1)'}}>
-          {['Auto', 'Bind'].map(this.autoBind)}
+          {this.manualBind()}
+        </View>
+        <View style={{flex: 1, backgroundColor: 'rgba(255, 0, 0, 0.1)'}}>
+          {this.autoBind()}
         </View>
       </View>
     );
   }
 
-  manualBind(string, index) {
+  manualBind() {
     return (
-      <View key={index} style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>{string} Works great!</Text>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Manual</Text>
       </View>
     );
   }
 
-  autoBind = (string, index) => {
+  autoBind = () => {
     return (
-      <View key={index} style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>{string} But this doesnt!</Text>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Auto</Text>
       </View>
     );
   }
