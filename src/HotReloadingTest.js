@@ -24,7 +24,7 @@ export default class HotReloadingTest extends React.Component {
   manualBind(string, index) {
     return (
       <View key={index} style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>{string} Works great!</Text>
+        <Text>{string}</Text>
       </View>
     );
   }
@@ -32,7 +32,7 @@ export default class HotReloadingTest extends React.Component {
   autoBind = (string, index) => {
     return (
       <View key={index} style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>{string} But this doesnt!</Text>
+        <Text>{string}</Text>
       </View>
     );
   }
